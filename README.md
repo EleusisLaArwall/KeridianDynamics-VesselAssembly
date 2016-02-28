@@ -1,20 +1,25 @@
 Keridian Dynamics - Vessel Assembly
 
 Info:
-This pack contains a Furnace to convert Ore to Metal and a 3D-Printer to print RocketParts from Metal. Also two launchpads that require ExtraplanetaryLaunchpads to assemble vessels from Rocketparts and some tanks to store Metal and Rocketparts. The production-chain is very basic: Ore --> Metal --> RocketParts --> Vessel.
+This pack contains a Furnace to convert Ore to Metal and a 3D-Printer to print RocketParts from Metal. Also some launchpads that require ExtraplanetaryLaunchpads to assemble vessels from Rocketparts and some tanks to store Metal and RocketParts. The production-chain is very basic: Ore --> Metal --> RocketParts --> Vessel.
 
 Installation:
-Make backups of your save-files. 
-Copy the 'GameData' folder inside the zip file to your Kerbal Space Program directory.
+1. Make backups of your save-files and/or customised configs.
+2. Delete older versions of Keridian Dynamics - Vessel Assembly.
+3. Copy the 'GameData' folder inside the zip file to your Kerbal Space Program directory.
 
 Dependency:
-All parts will load without any other mods installed but the Pad and OrbitalPad will have no function. The resource-config from Customisation is required for this scenario.
-The Pad and OrbitalPad need ModuleManager and ExtraplanetaryLaunchpads to work.
+-ModuleManager
+-ExtraplanetaryLaunchpads
+Note: KSP will load all parts but without ModuleManager and ExtraplanetaryLaunchpads the Laucnhpads will have no function. The resource-config from Customisation is required for this scenario.
 
 Customisation:
-This folder contains resource-definitions that are required if you don't have ExtraplanetaryLaunchpads installed. 
-The ModuleManager-patches change the input-resource of the Furnace from Ore to MetalOre or MetallicOre (Not balanced; Just made sure that it doesn't violate the conservation of mass). 
-To install a customisation just copy the .cfg-file somewhere in the GameData-folder.
+-This folder contains resource-definitions that are required if you don't have ExtraplanetaryLaunchpads installed. 
+-The ModuleManager-patches change the input-resource of the Furnace from Ore to MetalOre or MetallicOre (Extract-ratio = 0.7017 = [3*m(Fe)+4*m(O)]/[3*m(Fe)] for Fe3O4; 1kg M.Ore --> 0.7kg Metal). 
+-To install one of the customisations above copy the .cfg-file somewhere in the GameData-folder.
+-For the colored tanks copy the .mu and .cfg into "GameData/KeridianDynamics/Parts/KD-OrbitalPad/" and edit the .cfg to your likings. There is an example file "KD-T125-An-LFO-Example" if different locations are required.
+-To reduce RAM-usage copy the .dds files from ".zip/Customisation/512x512textures" into the corresponding folder inside "GameData/KeridianDynamics/Parts/".
+-The Example Craft works right on the Launchpad (1 toggleSolarPanels; 2 toggleRadiators; 3 Deploy Drill; 4 Start Srf-Drill; 5 Stop Srf-Drill).
 
 Supported Mods:
 -CommunityTechTree (config included).
@@ -28,6 +33,21 @@ CC-BY-SA 4.0 International
 https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 Changelog:
+2015-02-27 - 2016 update - v0.5
+	-Reworked tanks. (Names have changed, so be carefull with savegames!)
+	-Changed RoverPads to TopPad and SidePad. (Names have changed, so be carefull with savegames!)
+	-New mesh-colliders for all parts (be carefull with savegames!).
+	-Toggleable Spawn Marker for all Pads added. A vessel from SPH will point in the direction of the arrowtip. VAB vessels will still point upwards.
+	-KD-OrbitalPad, KD-SidePad, KD-TopPad and all tanks now share the same texture (KD-OrbitalPad.dds).
+	-Added thermal properties to KD-Pad and KD-OrbitalPad to prevent overheating-explosions during vessel-launch (might be exploitable ...).
+	-Added thermal curves to KD-Furnace and KD-3D-Printer.
+	-The Furnace needs to heat up before Metal can be extracted. CoreTemperature must at least reach 1800 K to start the extraction! Heating needs a lot of ElectricCharge. Once the extraction has started the heater can be turned off. 
+	-The 3D-Printer needs 20 ElectricCharge instead of 10. It needs RoomTemperature to operate (300 K). Heat production is rather low.
+	-Some minor model and texture changes.
+	-Added 512x512 textures to Customisation.
+	-Added "KD-Example Craft.craft" to Customisation.
+	-Updated CTT-compatibility.
+
 2015-08-23 - License update - v0.4
 	-License changed to CC-BY-SA 4.0 International
 	-New experimental parts: KD-RoverPad & KD-RoverPad2
