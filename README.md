@@ -11,13 +11,13 @@ Installation:
 Dependency:
 -ModuleManager
 -ExtraplanetaryLaunchpads
+-InterstellarFuelSwitch
 Note: KSP will load all parts but without ModuleManager and ExtraplanetaryLaunchpads the Laucnhpads will have no function. The resource-config from Customisation is required for this scenario.
 
 Customisation:
 -This folder contains resource-definitions that are required if you don't have ExtraplanetaryLaunchpads installed. 
 -The ModuleManager-patches change the input-resource of the Furnace from Ore to MetalOre or MetallicOre (Extract-ratio = 0.7017 = [3*m(Fe)+4*m(O)]/[3*m(Fe)] for Fe3O4; 1kg M.Ore --> 0.7kg Metal). 
 -To install one of the customisations above copy the .cfg-file somewhere in the GameData-folder.
--For the colored tanks copy the .mu and .cfg into "GameData/KeridianDynamics/Parts/KD-OrbitalPad/" and edit the .cfg to your likings. There is an example file "KD-T125-An-LFO-Example" if different locations are required.
 -To reduce RAM-usage copy the .dds files from ".zip/Customisation/512x512textures" into the corresponding folder inside "GameData/KeridianDynamics/Parts/".
 -The Example Craft works right on the Launchpad (1 toggleSolarPanels; 2 toggleRadiators; 3 Deploy Drill; 4 Start Srf-Drill; 5 Stop Srf-Drill).
 
@@ -33,7 +33,18 @@ CC-BY-SA 4.0 International
 https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 Changelog:
-2015-02-27 - 2016 update - v0.5
+2016-04-16 - Recycling - v0.6
+	-Added Interstellar Fuel Switch dependency. (Tank names have changed, be careful with savegames!)
+	-Reworked models. (Colliders have not changed.)
+	-Added Normal maps.
+	-Added Emissive maps.
+	-Added new animations.
+	-Reworked Furnace behavior. No more seperate heating needed. 
+	-Furnace needs much less EC but produces more heat.
+	-New part: KD-Recycler. (Roll-animation and ExRecycler need to be activated seperately)
+	-Updated CTT-compatibility.
+
+2016-02-27 - 2016 update - v0.5
 	-Reworked tanks. (Names have changed, so be carefull with savegames!)
 	-Changed RoverPads to TopPad and SidePad. (Names have changed, so be carefull with savegames!)
 	-New mesh-colliders for all parts (be carefull with savegames!).
