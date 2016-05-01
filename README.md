@@ -19,7 +19,12 @@ Customisation:
 -The ModuleManager-patches change the input-resource of the Furnace from Ore to MetalOre or MetallicOre (Extract-ratio = 0.7017 = [3*m(Fe)+4*m(O)]/[3*m(Fe)] for Fe3O4; 1kg M.Ore --> 0.7kg Metal). 
 -To install one of the customisations above copy the .cfg-file somewhere in the GameData-folder.
 -To reduce RAM-usage copy the .dds files from ".zip/Customisation/512x512textures" into the corresponding folder inside "GameData/KeridianDynamics/Parts/".
--The Example Craft works right on the Launchpad (1 toggleSolarPanels; 2 toggleRadiators; 3 Deploy Drill; 4 Start Srf-Drill; 5 Stop Srf-Drill).
+
+ExperimentalSection:
+WARNING: Very WIP! May not function as advertised. Designed for testing.
+Dependency: Kerbal Inventory System
+Installation: Copy the 'GameData' folder from ".zip/WIP_ExperimentalSection" to your Kerbal Space Program directory and overwrite if asked.
+The textures are complete overkill atm. Included lower-res textures (untested).
 
 Supported Mods:
 -CommunityTechTree (config included).
@@ -33,6 +38,16 @@ CC-BY-SA 4.0 International
 https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 Changelog:
+2016-05-01 - PECUNIA PER KERBULUS - v0.6.1
+	-Reexported models with Unity 5 and PartTools 1.1.
+	-New Company Motto: PECUNIA PER KERBULUS. (Thanks to DaniDE for translation!)
+	-Reworked Logo and Flags.
+	-Used "Icon_Hidden" tag. (Thanks to Badsector for the hint!)
+	-Added ExperimentalSection (needs KIS).
+	-New experimental part: KD-Fundament. (Thanks to colmo for the suggestion!)
+	-New experimental part: KD-LaunchSite.
+	-New experimental part: KD-SledgeHammer "Susie".
+
 2016-04-16 - Recycling - v0.6
 	-Added Interstellar Fuel Switch dependency. (Tank names have changed, be careful with savegames!)
 	-Reworked models. (Colliders have not changed.)
