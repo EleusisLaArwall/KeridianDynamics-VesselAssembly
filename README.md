@@ -8,27 +8,33 @@ Installation:
 2. Delete older versions of Keridian Dynamics - Vessel Assembly.
 3. Copy the 'GameData' folder inside the zip file to your Kerbal Space Program directory.
 
-Dependency:
+Dependency (100% required):
 -ModuleManager
+
+Dependency (99.9...% required):
 -ExtraplanetaryLaunchpads
+-Kerbal Inventory System
+Note: KSP will load all parts but without ExtraplanetaryLaunchpads the Laucnhpads will have no function and without KIS the SledgeHammer and Launchsite will have no function.
+
+Highly recommended:
+-OSE Workshop
 -InterstellarFuelSwitch
-Note: KSP will load all parts but without ModuleManager and ExtraplanetaryLaunchpads the Laucnhpads will have no function. The resource-config from Customisation is required for this scenario.
-
-Customisation:
--This folder contains resource-definitions that are required if you don't have ExtraplanetaryLaunchpads installed. 
--The ModuleManager-patches change the input-resource of the Furnace from Ore to MetalOre or MetallicOre (Extract-ratio = 0.7017 = [3*m(Fe)+4*m(O)]/[3*m(Fe)] for Fe3O4; 1kg M.Ore --> 0.7kg Metal). 
--To install one of the customisations above copy the .cfg-file somewhere in the GameData-folder.
--To reduce RAM-usage copy the .dds files from ".zip/Customisation/512x512textures" into the corresponding folder inside "GameData/KeridianDynamics/Parts/".
-
-ExperimentalSection:
-WARNING: Very WIP! May not function as advertised. Designed for testing.
-Dependency: Kerbal Inventory System
-Installation: Copy the 'GameData' folder from ".zip/WIP_ExperimentalSection" to your Kerbal Space Program directory and overwrite if asked.
-The textures are complete overkill atm. Included lower-res textures (untested).
+-Firespitter
+Note: The config autodetects if Firespitter or InterstellarFuelSwitch is installed and uses the corresponding modules. If both are installed, the Firespitter modules are used.
 
 Supported Mods:
 -CommunityTechTree (config included).
 -AVC
+
+Customisation:
+-This folder contains ModuleManager-patches to change the input-resource of the Furnace from Ore to MetalOre or MetallicOre (Extract-ratio = 0.7017 = [3*m(Fe)+4*m(O)]/[3*m(Fe)] for Fe3O4; 1kg M.Ore --> 0.7kg Metal). 
+-To install one of the customisations above copy the *Furnace.cfg (and *ResourceDefinition.cfg) somewhere in the GameData-folder.
+-To reduce RAM-usage copy the .dds files from ".zip/Customisation/512x512textures" into the corresponding folder inside "GameData/KeridianDynamics/Parts/".
+
+ExperimentalSection:
+WARNING: Very WIP! May not function as advertised. Designed for testing.
+Installation: Copy the 'GameData' folder from ".zip/WIP_ExperimentalSection" to your Kerbal Space Program directory and overwrite if asked.
+The textures are complete overkill atm. Included lower-res textures (untested).
 
 Warranty:
 The Mod is in development, so no warranty if it breaks craft- or save-files. Make backups in time!
@@ -38,6 +44,19 @@ CC-BY-SA 4.0 International
 https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 Changelog:
+2016-05-16 - Universal Assembly - v0.7
+	-New part: KD-MobileVAB. Acts primary as Survey Station and offers a high productivity factor for up to 12 Kerbals.
+	-New part (previously experimental): KD-LaunchSite (reworked). Acts as Survey Stake.
+	-New part (previously experimental): KD-SledgeHammer. Needed to attach the LaunchSite to the ground.
+	-All parts above need Kerbal Inventory System to work properly.
+	-Added support for OSE workshop.
+	-KD-3D-Printer can convert Ore to MaterialKits.
+	-KD-MobileVAB can be used as OSE workshop and OSE recycler.
+	-KD-T125FS and KD-T250FS have 2 additional setups (Materialkits and RareMetals/ExoticMinerals).
+	-InterstellarFuelSwitch is not a dependency anymore but still supported and highly recommended.
+	-Added support for Firespitter (FSmeshSwitch & FSfuelSwitch).
+	-Added MM-config that autodetects if Firespitter and/or InterstellarFuelSwitch is installed and applies the corresponding modules to the tanks. (If both are NOT installed, two tanks for RocketParts and two tanks for Metal are available)
+
 2016-05-01 - PECUNIA PER KERBULUS - v0.6.1
 	-Reexported models with Unity 5 and PartTools 1.1.
 	-New Company Motto: PECUNIA PER KERBULUS. (Thanks to DaniDE for translation!)
