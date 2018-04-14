@@ -1,7 +1,7 @@
 Keridian Dynamics - Vessel Assembly
 
 Info:
-This pack contains a Furnace to convert Ore to Metal and a 3D-Printer to print RocketParts from Metal. Also some launchpads that require ExtraplanetaryLaunchpads to assemble vessels from Rocketparts and some tanks to store Metal and RocketParts. The production-chain is very basic: Ore --> Metal --> RocketParts --> Vessel.
+This pack contains a Furnace and a ChemicalReactor to convert Ore to Metal and a 3D-Printer to print RocketParts from Metal. Also some launchpads that require ExtraplanetaryLaunchpads to assemble vessels from Rocketparts and some tanks to store Metal and RocketParts. The production-chain is very basic: Ore --> Metal --> RocketParts --> Vessel.
 
 Installation:
 1. Make backups of your save-files and/or customised configs.
@@ -10,26 +10,23 @@ Installation:
 
 Dependency (100% required):
 -ModuleManager
+-ResourceSwitch (InterstellarFuelSwitch OR Firespitter OR B9PartSwitch)
 
-Dependency (99.9...% required):
--ExtraplanetaryLaunchpads
--Kerbal Inventory System
-Note: KSP will load all parts but without ExtraplanetaryLaunchpads the Laucnhpads will have no function and without KIS the SledgeHammer and Launchsite will have no function.
+Dependency (99.9...% required. KSP will load all parts but some will have reduced or no function):
+-ExtraplanetaryLaunchpads OR SimpleConstruction (without this the Laucnhpads, Launchsite, Sledgehammer, MobileVAB, OrbitalHangar will have no function)
+-Kerbal Inventory System (without this the Launchsite and Sledgehammer will have no function)
+-Kerbal Attachment System (without this the RecycleSite will dump all recycled resources)
+-JSI Advanced Transparent Pods (without this the passable and nonpassable Storage Tanks will have no IVA overlay)
+-PatchManager (without this the MM patches are not toggleable)
+Note: The config autodetects if Firespitter or InterstellarFuelSwitch or B9PartSwitch is installed and uses the corresponding modules. If multiple ResourceSwitchers are installed, the priority goes as follows: IFS > FS > B9PS 
 
-Highly recommended:
--OSE Workshop
--InterstellarFuelSwitch
--Firespitter
-Note: The config autodetects if Firespitter or InterstellarFuelSwitch is installed and uses the corresponding modules. If both are installed, the Firespitter modules are used.
-
-Supported Mods:
--CommunityTechTree (config included).
+Recommended/supported Mods:
+-OSE Workshop (highly recommended)
+-GTIndustries (highly recommended)
+-CommunityTechTree (config included)
 -AVC
-
-Customisation:
--This folder contains ModuleManager-patches to change the input-resource of the Furnace from Ore to MetalOre or MetallicOre (Extract-ratio = 0.7017 = [3*m(Fe)+4*m(O)]/[3*m(Fe)] for Fe3O4; 1kg M.Ore --> 0.7kg Metal). 
--To install one of the customisations above copy the *Furnace.cfg (and *ResourceDefinition.cfg) somewhere in the GameData-folder.
--To reduce RAM-usage copy the .dds files from ".zip/Customisation/512x512textures" into the corresponding folder inside "GameData/KeridianDynamics/Parts/".
+-Community Resource Pack
+-Connected Living Space
 
 ExperimentalSection:
 WARNING: Very WIP! May not function as advertised. Designed for testing.
@@ -44,6 +41,106 @@ CC-BY-SA 4.0 International
 https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 Changelog:
+2018.04.15 - The No-Title-Pre-Release Update - v0.8.9
+	- Compatibility to EL 6.0
+	- Re-export all models (except Internals) with unity 2017.1.3p1 and latest parttools
+	- Language support (english)
+	- B9PartSwitch support
+	- A Resource-Switcher (FS, IFS or B9PS) is now mandatory
+	- All Resource Converters are enabled by default (some require CRP)
+	- Patchmanager support
+		- Ore->Metal converters can be disabled
+		- MetalOre->Metal converters can be disabled
+		- ScrapMetal->Metal converters can be disabled
+		- Metal->RocketParts converters can be disabled
+		- Metal->MaterialKits converters can be disabled
+		- Metal+Ore->SpecializedParts converters can be disabled
+		- Dirt->RareMetals+ExoticMinerals converters can be disabled
+		- Old costs can be restored
+		- Station Tank Series can be disabled
+		- (Cargo) Tank Series can be disabled
+		- Station Tank Series can be crewed
+		- OSE Workshop default Resource can be switched from MaterialKits to RocketParts
+	- Integrated 534443s cost-rebalance (thanks a lot!)
+	- Reintegrated Station Tank Series
+	- Fixed unused switcher for Cargo Tanks
+	- StockDrill Patch only applies if no other MetalOre harvester is present already
+	- Added MetalOre Harvester to MiniDrill
+	- Reworked Spawn Markers
+	- Redo MetalOre converters (density change 0.0275->0.026)
+	- Removed very old hexagonal tanks used when FS and IFS are not installed (no replacement)
+	- Removed KD-OrbitalPad, KD-SidePad and KD-TopPad
+	- New Parts:
+		- KD-Keronica: Rework of the old OrbitalPad. Advanced Probe Core with Launchpad.
+		- KD-LaunchPad (2 Variants 1.25,2.5): Light-weight replacement for OrbitalPad
+		- KD-LaunchPadSide (2 Variants 1.25,2.5): Light-weight replacement for SidePad
+		- KD-LaunchPadTop (2 Variants 1.25,2.5): Light-weight replacement for TopPad
+		- KD-ExtensionPad (6 variants, 0.625-5.0 meters): Light-weight part to extend exisiting vessels (ELDisposablePad)
+		- KD-FAVA (early prototype): Fully Automated Vessel Assembler. generates productivity without the need for Kerbals
+
+2017.01.21 - Recycling Everything - v0.8.2
+	-Moved parts to customisation: KD-STXXXXFS. New Adapters included.
+	-New part: KD-FurnaceSmall.
+	-New part: KD-FabricationContainer (Metal --> Rocketparts; needs an engineer).
+	-New part: KD-PAM (Planetary Assembly Management aka SurveyStation); has no IVA currently.
+	-New part: KD-PAMSmall.
+	-New part: KD-RecyclerSmall.
+	-New part: KD-RecycleSite (Needs KAS).
+	-New parts: KD-T125XFS (X=variant) 1.25 m Storage Tanks in 3 sizes(1, 2, 4 m)).
+	-New part: KD-T2001FS (1.25 to 2.5 m storage adapter).
+	-Re-exported most of the models with improved shading and materials.
+	-Re-worked most of the animations. Except the tanks all parts use ModuleColorChange for glow animations (can be changed in cfg).
+	-Overhauled resource storage and mass for ALL tanks.
+	-Added ScrapMetal setup.
+	-Added LFO setup (temporary, for balancing. Will be replaced in the future).
+	-Added surface attach to some parts (Launchpads for example).
+	-Fixed Furnaces MetalOre extraction ratio. Now really 70% (was 100 before).
+	-Recycling produces ScrapMetal and small amounts of Metal.
+	-Added ScrapMetal-->Metal converters (Furnaces,ChemicalReactor).
+	-Changed SpecialistBonus for KD-Furnace.
+	-Changed SpecialistBonus for KD-3D-Printer.
+	-ChemicalReactor can now extract RareMetals and ExoticMinerals from Dirt (if OSE Workshop is installed).
+	-Changed dependency for Metal,Ore-->SpecializedParts converter to require UmbraSpaceIndustries.
+	-Changed SimpleConstruction support: If SC is installed the following changes are applied:
+		1. No MetalOre Harvester.
+		2. No MetalOre-->Metal converters.
+		3. Ore-->Metal converters give 70 times more Metal.
+		4. Metal tanks storage-capacity is increased by factor 5 (ingame units, not mass!).
+	-Changed FS/IFS priority. If both are installed IFS module will be used.
+	-Added optional config to use RocketParts with OSE Workshop instead of MaterialKits, RareMetals & ExoticMinerals (KeridianDynamics-OSE-RP.cfg).
+
+2016-11-28 - Balancing update one - v0.8.1
+	-New part: KD-ChemicalReactor (Ore --> Metal+LFO)
+	-New parts: KD-T250XFS (X=variant) 2.5 m non-passable Storage Tanks in 3 sizes (1, 2, 3 m).
+	-New parts: KD-T375XFS (X=variant) 3.75 m non-passable Storage Tanks in 3 sizes (1, 3, 6 m).
+	-New part: KD-T3252FS 3.75 m to 2.5 m non-passable Storage Tank adapter (2 m).
+	-Removed parts: KD-T125FS and KD-T250FS.
+	-Increased Furnace conversion speed (~15 times faster, extr.-rate remains 1%-mass).
+	-Added MetalOre --> Metal converter to Furnace by default (~70%-mass extr.-rate).
+	-Added MetalOre harvester to Stock drill (Big one only).
+	-Increased 3D-Printer conversion speed (~21 times faster, conv.-rate remains 100%-mass).
+	-Reduced 3D-Printer mass to 1.85 tons.
+	-Included compatibility patch for SimpleConstruction.
+	-Updated converter specialty to ExperienceEffect (3D Printer,Furnace = ConverterSkill; ChemicalReactor = ScienceSkill).
+	-Added Bulkheadprofiles.
+	-Added tags.
+	-Added ScienceExperiment: OreScience to Stock Drill (Big one only).
+
+2016-07-06 - Storage update - v0.8
+	-New part: KD-OrbitalHangar. Big Launchpad for orbital construction and other stuff.
+	-New parts: KD-ST250XFS (X=variant) 2.5 m crew-passable Storage Tanks in 3 sizes (1, 2, 3 m).
+	-New parts: KD-ST375XFS (X=variant) 3.75 m crew-passable Storage Tanks in 3 sizes (1, 3, 6 m).
+	-New part: KD-ST3252FS 3.75 m to 2.5 m crew-passable Storage Tank adapter (2 m).
+	-Community Resource Pack now triggers storage configurations for MaterialKits,... (instead of OSE because CRP is bundled with OSE).
+	-Added JSI Advanced Transparant Pods dependency.
+	-Added support for ConnectedLivingSpace.
+	-Added optional config that allows the 3D-Printer to make MaterialKits from Metal in customisation.
+	-KD-MobileVAB: Minor model tweaks. Airlock moved to the bottom; Fixed IVA light.
+	-LaunchSite: One arm glows in a darker blue now.
+	-Launchpads and MobileVAB have proper names for EL GUI.
+	-All parts have been rebalanced in cost, cost to unlock and tech-node (Stock and CTT).
+	-Changed capacity for MaterialKits, RareMetals, ExoticMinerals and Monoprop. on old tanks.
+
 2016-05-16 - Universal Assembly - v0.7
 	-New part: KD-MobileVAB. Acts primary as Survey Station and offers a high productivity factor for up to 12 Kerbals.
 	-New part (previously experimental): KD-LaunchSite (reworked). Acts as Survey Stake.
@@ -121,3 +218,29 @@ Changelog:
 	-New part: KD-TankHex1-RocketParts
 	-New part: KD-TankHex2-Metal
 	-New part: KD-TankHex2-RocketParts
+	
+A very big THANK YOU to the following mod developers and specially the plugin-writers/maintainers (because that is witchcraft to me ;) ) for their hard work:
+taniwha and skykooler for ExtraplanetaryLaunchpads.
+sarbian for ModuleManager.
+cybutek for KSP-AVC.
+FreeThinker for Interstellar Fuel Switch.
+KospY, Winn75 and Igorz for Kerbal Inventory System.
+ObiVanDamme and Enceos for OSE Workshop.
+Snjo and RoverDude for Firespitter.
+RoverDude for Community Resource Pack.
+JPLRepo for JSI Advanced Transparant Pods.
+Codepoet and Papa_Joe for Connected Living Spaces.
+linuxgururgamer for PatchManager.
+Warezcrawler for GTIndustries.
+
+Also I'd like to give a big THANK YOU for the Mod Development Links Compilation and modding tutorials on the KSP forum to Cpt. Kipard and everyone who contributed. 
+
+Thanks to everyone who gives or ever gave feedback! It's very important for me and highly appreciated.
+Special thanks:
+Sigma88 for the ModuleManager-configs and support! (Check out his awesome stuff here if you haven't already).
+wasml for the Recycler suggestion.
+colmo for the Fundament suggestion.
+DaniDE for the name-suggestions and the translation of the company Motto - PECUNIA PER KERBULUS 
+Joshwoo70 / Joshwoo69 for the OrbitalHangar suggestion.
+Dr Farnsworth for continued feedback, testing and a lot of very helpfull suggestions.
+534443 for the cost and entryCost rebalance
